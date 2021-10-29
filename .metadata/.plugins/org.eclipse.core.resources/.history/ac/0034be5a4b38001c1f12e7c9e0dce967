@@ -1,0 +1,12 @@
+package applicatinon;
+
+import java.util.Scanner;
+import java.lang;
+
+public class ExercicioResolvido {
+
+	Scanner sc = new Scanner(System.in);
+	String path =sc.nextLine();
+	
+	
+}

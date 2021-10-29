@@ -1,0 +1,12 @@
+package applicatinon;
+
+import java.util.Scanner;
+
+public class ExercicioResolvido {
+
+	
+	Scanner sc = new Scanner(System.in);
+	
+	
+	
+}
