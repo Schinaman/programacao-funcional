@@ -1,0 +1,22 @@
+Conceitos, Teoria básicas.
+
+Paradigmas:
+-Imperativo
+-Orientado a Objeto
+-Funcional (Formalismo matemático - Cálculo Lambda (Church 1930)
+-Lógico
+-Multiparadigma
+
+Como se descreve algo a ser computado
+Funções possuem transparência referencial (ausência de efeitos colaterais)
+Objetos imutáveis
+Funções são objetos de primeira ordem
+Expressividade / código conciso
+Tipagem dinâmica / inferencia de tipos
+
+
+
+Definição:
+  Transparencia referencial:
+Uma função possui transparencia referencial se seu resultado for sempre o mesmo para os mesmos dados de entrada. Benecifios = simplicidade e previsibilidade.
+  

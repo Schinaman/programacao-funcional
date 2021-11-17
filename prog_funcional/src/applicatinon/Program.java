@@ -1,18 +1,22 @@
 package applicatinon;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import entities.Product;
+import application.Teoria;
 
 public class Program {
 
 	public static void main(String[] args) {
-		Locale.setDefault(Locale.US);
 		
+		//Teoria.exemploFuncaoNaoReferencialmenteTransparente();
+		Teoria.exemploObjetosPrimeiraOrdem();
 		//exemplosStreams();
-		pipelineDemo();
+		//pipelineDemo();
 		
 	}
 
@@ -52,4 +56,12 @@ public class Program {
 				
 
 	}
+	
+
+
+
 }
+
+
+
+

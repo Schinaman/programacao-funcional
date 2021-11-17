@@ -1,0 +1,98 @@
+package applicatinon;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import entities.Product;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		exemploFuncaoNaoReferencialmenteTransparente();
+		exemploObjetosPrimeiraOrdem();
+		//exemplosStreams();
+		//pipelineDemo();
+		
+	}
+
+	public static void pipelineDemo() {
+		List<Integer> list = Arrays.asList(3,4,5,10,7);
+		
+		Stream<Integer> st1 = list.stream().map(x -> x * 10); //map aplica uma função a cada elemento da minha stream
+		System.out.println(Arrays.toString(st1.toArray())); //To Array expressão terminal
+		
+		int sum = list.stream().reduce(1, (x,y) -> x+y); //reduce pega o elemento inicial, elemnto neutro da operação e depois a função que gera o resultado; "0" pq é o elemento neutro da operação de soma, se fosse produtorio, seria 1
+		System.out.println("Sum = "+ sum);
+		
+
+		List<Integer> newList = list.stream()
+				.filter(x -> x % 2 == 0) //filtra a lista; insere um predicado, com base nesse predicado será dado uma nova stream apenas com os elementos que satisfaça o predicado
+				.map(x -> x * 10)
+				.collect(Collectors.toList()); //operação terminal para transoformar em list
+		System.out.println(Arrays.toString(newList.toArray()));
+	}
+	
+	public static void exemplosStreams() {
+		List<Integer> list = Arrays.asList(3,4,5,19,7);
+		
+		Stream<Integer> st1 = list.stream().map(x -> x * 10); //map aplica uma função a cada elemento da minha stream
+		System.out.println(Arrays.toString(st1.toArray()));
+
+		Stream<String> st2 = Stream.of("Maria", "Alex", "Bob");
+		System.out.println(Arrays.toString(st2.toArray()));
+		
+		
+		Stream<Integer> st3 = Stream.iterate(0,  x ->x +2);
+		System.out.println(Arrays.toString(st3.limit(10).toArray()));
+				
+		//Fibonacci
+		Stream<Long> st4 = Stream.iterate(new Long[] {0L, 1L}, p -> new Long[] {p[1], p[0]+p[1]}).map(p -> p[0]);//iterate vai gerar uma stream de pares, mas quero stream de Long. map para transforamar os pares em apenas 1 elemento		
+		System.out.println(Arrays.toString(st4.limit(15).toArray()));				
+				
+
+	}
+	
+//Exemplo de transparencia referencial
+	//Uma função possui transparencia referencial se seu resultado for sempre o mesmo para os mesmos dados de entrada. Benecifios = simplicidade e previsibilidade.
+	public static int globalValue = 3; 
+	public static void exemploFuncaoNaoReferencialmenteTransparente() {
+		
+		int [] vect = new int[] {3,4,5,};
+		changeOddValues(vect); //comportamento desta função depende de um valor externo
+		System.out.println(Arrays.toString(vect));
+	}
+	
+	public static void changeOddValues(int[] numbers) { //função não referencial
+		for (int i = 0; i < numbers.length; i++) {
+			if (numbers[i] %2 !=0) {
+				numbers[i] += globalValue;
+			}
+		}
+	}
+
+//Funções são Objetos de primeira ordem
+	public static int compareProducts(Product p1, Product p2) {
+		return p1.getPrice().compareTo(p2.getPrice());
+	}
+
+	public static void exemploObjetosPrimeiraOrdem() {
+		List<Product> list = new ArrayList<>();
+		
+		list.add(new Product("TV", 900.0));
+		list.add(new Product("Notebook", 1200.0));
+		list.add(new Product("Tablet", 450.0));
+		
+		list.sort(Program::compareProducts); //Posso passar a referencia para função compareProducts; "Classe::Função";
+		list.forEach(System.out::println);
+	}
+
+
+}
+
+
+
+
