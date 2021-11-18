@@ -14,11 +14,17 @@ public class Program {
 		//Teoria.exemploObjetosPrimeiraOrdem();
 		
 		//application.ProductPredicate.productPredicate1(); //Exemplo padrão
-		application.ProductPredicate.productPredicate2(); //Instancia Classe que implementa Interface Predicate
-		application.ProductPredicate.productPredicate3(); //Metodo Statico
-		application.ProductPredicate.productPredicate4(); //Metodo não Estatico 
-		//Função Lambda Declarada
+		//application.ProductPredicate.productPredicate2(); //Instancia Classe que implementa Interface Predicate
+		//application.ProductPredicate.productPredicate3(); //Metodo Statico
+		//application.ProductPredicate.productPredicate4(); //Metodo não Estatico 
+		//application.ProductPredicate.productPredicate5();//Função Lambda Declarada
+		//application.ProductPredicate.productPredicate6();
 		
+		//ProductConsumer.productConsumer1();
+		//ProductConsumer.productConsumer2();
+		ProductConsumer.productConsumer3();
+		ProductConsumer.productConsumer4();
+		//ProductConsumer.productConsumer5();
 		
 		//exemplosStreams();
 		//pipelineDemo();

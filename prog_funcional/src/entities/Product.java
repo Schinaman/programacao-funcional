@@ -33,9 +33,18 @@ public class Product {
 	}
 
 	//aceita referência para metodo não statico
-		public boolean nonStaticProductPredicate() { //trabalha com o proprio objeto, não precisa declara o Objeto como argumento 
+	public boolean nonStaticProductPredicate() { //trabalha com o proprio objeto, não precisa declara o Objeto como argumento 
 			return price>=100.0;
 		}
+	
+	
+	public static void staticConsumerPriceUpdate(Product p){
+		p.setPrice(p.getPrice()*1.1);
+	}
+	public void nonStaticConsumerPriceUpdate(){
+		this.price = (this.price * 1.1);
+	}
+	
 	
 	@Override
 	public String toString() {
