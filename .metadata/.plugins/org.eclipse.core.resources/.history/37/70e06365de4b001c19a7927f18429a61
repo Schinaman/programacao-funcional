@@ -1,0 +1,13 @@
+package util;
+
+import java.util.function.Function;
+
+public class ProductFuncion implements Function<Product>{
+
+	@Override
+	public Object apply(Object p) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

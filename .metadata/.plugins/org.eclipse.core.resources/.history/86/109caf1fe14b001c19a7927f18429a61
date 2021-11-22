@@ -1,0 +1,47 @@
+Conceitos, Teoria básicas.
+
+Paradigmas:
+-Imperativo
+-Orientado a Objeto
+-Funcional (Formalismo matemático - Cálculo Lambda (Church 1930)
+-Lógico
+-Multiparadigma
+
+Como se descreve algo a ser computado 		= expressões ("o quê" - declarativa)
+Funções possuem transparência referencial 	= forte
+Objetos imutáveis:							= comum	 - programa mais simples; variavel vale um valor e não muda; são thread safe;
+Funções são objetos de primeira ordem		= sim	 - 
+Expressividade / código conciso				= alta	 -
+Tipagem dinâmica / inferencia de tipos		= comum	 -
+
+
+
+Definição:
+  Transparencia referencial:(ausência de efeitos colaterais)
+Uma função possui transparencia referencial se seu resultado for sempre o mesmo para os mesmos dados de entrada. Benecifios = simplicidade e previsibilidade.
+ 
+ 
+ 
+ Interface funcional - Uma interface que possui um único método abstrato. Suas implementações serão tratadas como expressões lambda.
+   Cria a Classe
+   Implementa o método da interface
+   Possui apenas um método
+   Passa objeto da classe como argumento da Função
+   Possui um mapeamento direto com a expressão lambda. 
+   *No fundo a expressão lambada será tratada como uma interface com um unico metodo abstrato.
+   Existe um mapeamento entre programação funcional e mapeamento OO com interface. Pq Java é multiparadigma. e veio da OO é assim. Em linguagens funcionais puras isso não existe.
+   
+ Tipos de Interfaces Funcionais:
+    Predicate -
+    Function -
+    Consumer - tem uma caracteristica especial: É esperado que ele possa gerar efeitos colaterais. o Metodo abstrato da Consumer é um void. [pq não tem parametros definidos internamente na função?]
+ 
+ 
+ 	INSIGHT
+ 	list.forEach(Product :: staticConsumerPriceUpdate );  
+		//Argumento do "forEach" recebe um Objeto do tipo Consumer;
+		//Quando eu uso um método referenciado (Reference Method) eu estou invocando um Consumer?
+		//Consumer é uma implementação de uma interface de um metodo só
+		//O Java provavelmente interpreta o método statico (e o não estatico) como uma implementação de uma interface funcional
+		//(Objeto do tipo Consumer é um objeto (classe) de uma unica função.
+		

@@ -31,20 +31,26 @@ public class Product {
 	public static boolean staticProductPredicate(Product p) { 
 		return p.getPrice()>=100.0;
 	}
-
 	//aceita referência para metodo não statico
 	public boolean nonStaticProductPredicate() { //trabalha com o proprio objeto, não precisa declara o Objeto como argumento 
 			return price>=100.0;
 		}
 	
-	
+//Consumer Methods	
 	public static void staticConsumerPriceUpdate(Product p){
 		p.setPrice(p.getPrice()*1.1);
 	}
 	public void nonStaticConsumerPriceUpdate(){
 		this.price = (this.price * 1.1);
 	}
-	
+
+//Function Methods
+	public static String staticFunctionUpperCase(Product p){ //RETORNA STRING
+		return p.getName().toUpperCase();
+	}
+	public String nonStaticFunctionUpperCase(){
+		return name.toUpperCase();
+	}
 	
 	@Override
 	public String toString() {

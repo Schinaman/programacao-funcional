@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import util.ProductFuncion;
+
 public class Program {
 
 	public static void main(String[] args) {
@@ -22,9 +24,15 @@ public class Program {
 		
 		//ProductConsumer.productConsumer1();
 		//ProductConsumer.productConsumer2();
-		ProductConsumer.productConsumer3();
-		ProductConsumer.productConsumer4();
+		//ProductConsumer.productConsumer3();
+		//ProductConsumer.productConsumer4();
 		//ProductConsumer.productConsumer5();
+		
+		//ProductFunction.productFunction1();
+		ProductFunction.productFunction2();
+		ProductFunction.productFunction3();
+		ProductFunction.productFunction4();
+		ProductFunction.productFunction5();
 		
 		//exemplosStreams();
 		//pipelineDemo();
